@@ -48,11 +48,15 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(trainFreq);
   
     var momentTrainStart = moment(trainTime, "HH:mm").subtract(1, "years");
-    console.log(momentTrainStart)
+    console.log(momentTrainStart);
     var diffTime = moment().diff(moment(momentTrainStart), "minutes");
+    console.log(diffTime);
     var tRemainder = diffTime % trainFreq;
+    console.log(tRemainder);
     var tMinutesUntilTrain = trainFreq - tRemainder;
-    var nextTrain = moment().add(tMinutesUntilTrain, "minutes"); 
+    console.log(tMinutesUntilTrain);
+    var nextTrain = moment().add(tMinutesUntilTrain, "minutes");
+    console.log(nextTrain);
 
 
     // Create the new row
